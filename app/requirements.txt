@@ -1,2 +1,4 @@
 fastapi==0.74.1
 uvicorn==0.17.5
+xgboost==1.5.2
+scikit-learn==1.0.1

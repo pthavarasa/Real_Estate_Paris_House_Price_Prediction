@@ -1,11 +1,16 @@
 FROM python:3.7
 
-RUN pip install --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
+ADD app ./app/
+ADD model ./model/
 
-ADD app ./
-ADD model ./
+COPY start.sh ./start.sh
+
+RUN pip install --upgrade pip && \
+    pip install --no-cache-dir -r app/requirements.txt
 
 EXPOSE 8000
+EXPOSE 8001
 
-CMD ["uvicorn", "app/backend/api:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+RUN chmod +x start.sh
+
+CMD ["./start.sh"]

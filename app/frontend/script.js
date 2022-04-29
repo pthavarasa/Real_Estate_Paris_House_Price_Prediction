@@ -44,7 +44,7 @@ document.querySelector("button").addEventListener("click", () => {
     rooms !== ""
   ) {
     var xhr = new XMLHttpRequest();
-    var url = "http://localhost:8000/predict/";
+    var url = "http://" + window.location.hostname + ":8000/predict/";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.onreadystatechange = function () {

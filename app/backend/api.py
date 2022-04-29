@@ -5,14 +5,14 @@ import pickle
 
 app = FastAPI()
 
-origins = ["*"]
+origins = ["http://141.94.79.97:8001/"]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=origins,
-    allow_headers=origins,
+    allow_methods="*",
+    allow_headers="*",
 )
 
 
