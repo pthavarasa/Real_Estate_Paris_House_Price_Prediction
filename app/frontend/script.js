@@ -51,6 +51,15 @@ document.querySelector("button").addEventListener("click", () => {
       if (xhr.readyState === 4 && xhr.status === 200) {
         var json = JSON.parse(xhr.responseText);
         console.log(json);
+        result = document.getElementById("result");
+        result.innerHTML = `Price : ${Math.round(json.price).toLocaleString(
+          "fr-FR",
+          {
+            style: "currency",
+            currency: "EUR",
+          }
+        )}`;
+        result.style.display = "inline-block";
       }
     };
     var data = JSON.stringify({
