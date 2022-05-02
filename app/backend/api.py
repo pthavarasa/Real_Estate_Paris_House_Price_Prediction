@@ -2,6 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pickle
+from fastapi import FastAPI, Request
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
+from pathlib import Path
 
 app = FastAPI()
 
@@ -32,6 +36,22 @@ class Item(BaseModel):
 
 filename = '../../model/xgboost_regression_model_min.pickle'
 classifier = pickle.load(open(filename, "rb"))
+
+app.mount(
+    "/assets",
+    StaticFiles(directory=Path(
+        __file__).parent.parent.absolute() / "../frontend/assets"),
+    name="static",
+)
+
+templates = Jinja2Templates(directory="../frontend")
+
+
+@app.get("/")
+async def root(request: Request):
+    return templates.TemplateResponse(
+        "index.html", {"request": request}
+    )
 
 
 @app.post("/predict/")
