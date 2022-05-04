@@ -10,3 +10,8 @@ MAE: 20390.9101285461
 MSE: 1958656804.737834
 RMSE: 44256.71479829738
 ```
+
+Start server
+```
+uvicorn app.backend.api:app --host 0.0.0.0 --port 80 --reload
+```
