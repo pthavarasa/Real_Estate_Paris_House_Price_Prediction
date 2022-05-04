@@ -34,17 +34,17 @@ class Item(BaseModel):
     district16: float
 
 
-filename = '../../model/xgboost_regression_model_min.pickle'
+filename = 'model/xgboost_regression_model_min.pickle'
 classifier = pickle.load(open(filename, "rb"))
 
 app.mount(
     "/assets",
     StaticFiles(directory=Path(
-        __file__).parent.parent.absolute() / "../frontend/assets"),
+        __file__).parent.parent.absolute() / "frontend/assets"),
     name="static",
 )
 
-templates = Jinja2Templates(directory="../frontend")
+templates = Jinja2Templates(directory="app/frontend")
 
 
 @app.get("/")
