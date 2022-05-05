@@ -11,7 +11,19 @@ MSE: 1958656804.737834
 RMSE: 44256.71479829738
 ```
 
-Start server
+#### Try online : [https://paris-house-price-prediction.herokuapp.com/](https://paris-house-price-prediction.herokuapp.com/)
+#### Start server
 ```
 uvicorn app.backend.api:app --host 0.0.0.0 --port 80 --reload
 ```
+#### Docker
+```
+# build
+docker build -t mymodel -f Dockerfile .
+
+# run
+docker run -p 8000:8000 mymodel
+```
+
+#### Screenshots
+![](screenshot.PNG)
