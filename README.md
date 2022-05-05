@@ -12,11 +12,15 @@ RMSE: 44256.71479829738
 ```
 
 #### Try online : [https://paris-house-price-prediction.herokuapp.com/](https://paris-house-price-prediction.herokuapp.com/)
-#### Start server
+#### Try locally
 ```
+pip install --upgrade pip
+
+pip install --no-cache-dir -r app/requirements.txt
+
 uvicorn app.backend.api:app --host 0.0.0.0 --port 80 --reload
 ```
-#### Docker
+#### Try with Docker
 ```
 # build
 docker build -t mymodel -f Dockerfile .
