@@ -22,7 +22,7 @@ uvicorn app.backend.api:app --host 0.0.0.0 --port 80 --reload
 docker build -t mymodel -f Dockerfile .
 
 # run
-docker run -p 8000:8000 mymodel
+docker run -p 80:80 mymodel
 ```
 
 #### Screenshots
