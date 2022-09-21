@@ -11,7 +11,10 @@ MSE: 1958656804.737834
 RMSE: 44256.71479829738
 ```
 
-#### Try online : [https://paris-house-price-prediction.herokuapp.com/](https://paris-house-price-prediction.herokuapp.com/)
+#### Try online : 
+https://thavarasa.name/heroku/?name=paris-house-price-prediction
+
+[https://paris-house-price-prediction.herokuapp.com/](https://paris-house-price-prediction.herokuapp.com/)
 #### Try locally
 ```
 pip install --upgrade pip
